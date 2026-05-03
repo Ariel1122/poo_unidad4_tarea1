@@ -33,7 +33,7 @@ public class SerieDeTV extends ContenidoAudiovisual {
     
     @Override //este método está sobrescribiendo un método de la clase padre
     public void mostrarDetalles() { //Dentro del método se imprimen los datos
-        System.out.println("Detalles de la película:");
+        System.out.println("Detalles de la serie de tv:");
         System.out.println("ID: " + getId());
         System.out.println("Título: " + getTitulo());
         System.out.println("Duración en minutos: " + getDuracionEnMinutos());

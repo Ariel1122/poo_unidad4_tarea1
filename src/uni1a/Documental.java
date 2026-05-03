@@ -35,7 +35,7 @@ public class Documental extends ContenidoAudiovisual {
     
     @Override //este método está sobrescribiendo un método de la clase padre
     public void mostrarDetalles() {  //Dentro del método se imprimen los datos
-        System.out.println("Detalles de la película:");
+        System.out.println("Detalles del documental:");
         System.out.println("ID: " + getId()); // encapsulamiento_documental no accede directamente a id
         System.out.println("Título: " + getTitulo());
         System.out.println("Duración en minutos: " + getDuracionEnMinutos());
