@@ -1,50 +1,57 @@
 package uni1a;
 
-public abstract class ContenidoAudiovisual {//Aquí se declara una clase
-    private static int contar = 0; //static significa que pertenece a la clase en general, no a un objeto específico.
-    private String titulo; //private significa que esos datos no se pueden modificar directamente desde otra clase.
-    private int duracionEnMinutos;
-    private String genero;
-    private int id;
 
-    public ContenidoAudiovisual(String titulo, int duracionEnMinutos, String genero) {
-        this.id = contar++; //asigna un ID automático, significa que después de usar el valor actual, aumenta en 1.
-        this.titulo = titulo; //this significa “este objeto
+public abstract class ContenidoAudiovisual {//clase padre abstracta para todos los tipos de contenido
+    private static int contar = 0; //permite generar un ID automatico
+    private int id; //identificador unico del contenido
+    private String titulo; //titulo del contenido
+    private int duracionEnMinutos; //duracion del contenido
+    private String genero; //genero del contenido
+
+   
+    public ContenidoAudiovisual(String titulo, int duracionEnMinutos, String genero) { //vonstructor de la clase padre
+        this.id = contar++;
+        this.titulo = titulo;
         this.duracionEnMinutos = duracionEnMinutos;
         this.genero = genero;
     }
 
-    // Getter y Setter para el campo 'titulo'
-    public String getTitulo() { //getter para obtener o leer un valor privado
+    public int getId() {// Getter para obtener el ID
+        return id;
+    }
+
+    public String getTitulo() {// Getter para obtener el titulo
         return titulo;
     }
 
-    public void setTitulo(String titulo) { //setter para modificar un valor privado
+    public void setTitulo(String titulo) {// Setter para modificar el titulo
         this.titulo = titulo;
     }
 
-    // Getter y Setter para el campo 'duracionEnMinutos'
-    public int getDuracionEnMinutos() {
+    public int getDuracionEnMinutos() {// Getter para obtener la duración
         return duracionEnMinutos;
     }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
+    public void setDuracionEnMinutos(int duracionEnMinutos) {// Setter para modificar la duración
         this.duracionEnMinutos = duracionEnMinutos;
     }
 
-    // Getter y Setter para el campo 'genero'
-    public String getGenero() {
+    public String getGenero() {// Getter para obtener el genero
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(String genero) {// Setter para modificar el genero
         this.genero = genero;
     }
 
-    // Getter para el campo 'id' (no se proporciona el Setter ya que 'id' se asigna en el constructor y parece ser inmutable)
-    public int getId() {
-        return id;
-    }
     
-    public abstract void mostrarDetalles();
+    protected String obtenerDatosBasicos() {//metodo común para obtener la informacion general del contenido
+        return "ID: " + getId() + "\n"
+                + "Título: " + getTitulo() + "\n"
+                + "Duración en minutos: " + getDuracionEnMinutos() + "\n"
+                + "Género: " + getGenero() + "\n";
+    }
+
+ 
+    public abstract String obtenerDetalles(); // metodo abstracto que cada subclase debe implementar
 }

@@ -1,49 +1,47 @@
-package uni1a;//clase Actor pertenece al paquete uni1a
-
-public class Temporada {//una temporada perteneciente a una serie de television
-
-    private int numeroTemporada; // atributo, guarda el numero de la temporada
-
-    private int cantidadEpisodios;// atributo, guarda la cntidad de episodios en temporadas
-
-    private int anioEstreno;// atributo, guarda el año de estreno
-
-  //PRIVATE: dato está protegido y no se puede modificar directamente desde otra clase
-    public Temporada(int numeroTemporada, int cantidadEpisodios, int anioEstreno) {// constructor de la clase temporar
-        this.numeroTemporada = numeroTemporada;//guarda el numero de temporada recibido en el atributo del numeroTemporada
-        this.cantidadEpisodios = cantidadEpisodios;//guarda el numero de temporada recibido en el atributo del numeroTemporada
-        this.anioEstreno = anioEstreno; //guarda el año de estreno recibido en el atributo anioEstreno
-    }
-
-    public int getNumeroTemporada() {//get para obtener el numero de tempora
-        return numeroTemporada;
-    }
+package uni1a;
 
 
-    public void setNumeroTemporada(int numeroTemporada) {//set para modificar la tempora
+public class Temporada {//clase que representa una temporada de televisión
+
+    private int numeroTemporada; //numero de temporada
+    private int cantidadEpisodios; //cantidad de episodios
+    private int anioEstreno; // Año de estreno de la temporada
+
+    //constructor de la clase Temporada
+    public Temporada(int numeroTemporada, int cantidadEpisodios, int anioEstreno) {
         this.numeroTemporada = numeroTemporada;
-    }
-
-    public int getCantidadEpisodios() {//get para obtener la cantidad de episodio
-        return cantidadEpisodios;
-    }
-
-    public void setCantidadEpisodios(int cantidadEpisodios) {//set para modificar la cantidad de episodios
         this.cantidadEpisodios = cantidadEpisodios;
-    }
-
-    public int getAnioEstreno() {//get para obtener el año de estreño
-        return anioEstreno;
-    }
-
-    public void setAnioEstreno(int anioEstreno) {//set para modificar el año de estreno
         this.anioEstreno = anioEstreno;
     }
 
+    public int getNumeroTemporada() {
+        return numeroTemporada;
+    }
 
-    public void mostrarInformacion() {// metodo que muestra en consola la información de la temporada
-        System.out.println("Temporada número: " + numeroTemporada);
-        System.out.println("Cantidad de episodios: " + cantidadEpisodios);
-        System.out.println("Año de estreno: " + anioEstreno);
+    public void setNumeroTemporada(int numeroTemporada) {
+        this.numeroTemporada = numeroTemporada;
+    }
+
+    public int getCantidadEpisodios() {
+        return cantidadEpisodios;
+    }
+
+    public void setCantidadEpisodios(int cantidadEpisodios) {
+        this.cantidadEpisodios = cantidadEpisodios;
+    }
+
+    public int getAnioEstreno() {
+        return anioEstreno;
+    }
+
+    public void setAnioEstreno(int anioEstreno) {
+        this.anioEstreno = anioEstreno;
+    }
+
+  
+    public String obtenerInformacion() { //devuelve la informacion de la temporada
+        return "Temporada número: " + numeroTemporada + "\n"
+                + "Cantidad de episodios: " + cantidadEpisodios + "\n"
+                + "Año de estreno: " + anioEstreno + "\n";
     }
 }

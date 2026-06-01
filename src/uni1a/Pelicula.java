@@ -1,54 +1,46 @@
-/**
- * Class Pelicula
- */
 package uni1a;
 
-// Subclase Pelicula que extiende de ContenidoAudiovisual
-public class Pelicula extends ContenidoAudiovisual { //extends, Significa que Pelicula hereda de ContenidoAudiovisual
-    private String estudio; //atributo solo pertenece a Pelicula
-    private Actor actorPrincipal; // Relación con la clase Actor
 
+public class Pelicula extends ContenidoAudiovisual {//subclase Pelicula que hereda ContenidoAudiovisual
 
-    public Pelicula(String titulo, int duracionEnMinutos, String genero, String estudio, Actor actorPrincipal) { //Este constructor recibe 4 datos
-        super(titulo, duracionEnMinutos, genero); //suoer llama al constructor de la clase padre
-        this.estudio = estudio; //guarda el dato propio de Pelicula
-        this.actorPrincipal = actorPrincipal; // guarda el dato de actor
+    private String estudio; // estudio que produjo la pelicula
+    private Actor actorPrincipal; //relacion con la clase Actor
+
+    // constructor de la clase
+    public Pelicula(String titulo, int duracionEnMinutos, String genero, String estudio, Actor actorPrincipal) {
+        super(titulo, duracionEnMinutos, genero);
+        this.estudio = estudio;
+        this.actorPrincipal = actorPrincipal;
     }
 
-    public String getEstudio() { //getter para obtener el estudio de la película
+    public String getEstudio() {
         return estudio;
     }
 
-    public void setEstudio(String estudio) { // setter para modificar el estudio de la película
+    public void setEstudio(String estudio) {
         this.estudio = estudio;
     }
-    
-    public Actor getActorPrincipal() { //getter para obtener el actor principal
+
+    public Actor getActorPrincipal() {
         return actorPrincipal;
     }
-    
-    public void setActorPrincipal(Actor actorPrincipal) { //setter para modificar el actor principal
+
+    public void setActorPrincipal(Actor actorPrincipal) {
         this.actorPrincipal = actorPrincipal;
     }
+
     
-    
-    @Override //este método está sobrescribiendo un método de la clase padre
-    public void mostrarDetalles() { //Dentro del método se imprimen los datos
-        System.out.println("Detalles de la película:");
-        System.out.println("ID: " + getId()); // encapsulamiento_Pelicule no accede directamente a id
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Estudio: " + estudio);
-        
-        if (actorPrincipal != null) { //si la película tiene un actor principal asignado
-            System.out.println("Información del actor principal:");
-            actorPrincipal.mostrarInformacion();
+    @Override //devuelve los detalles de la pelocula 
+    public String obtenerDetalles() {
+        String detalles = "Detalles de la película:\n"
+                + obtenerDatosBasicos()
+                + "Estudio: " + estudio + "\n";
+
+        if (actorPrincipal != null) {
+            detalles += "Información del actor principal:\n"
+                    + actorPrincipal.obtenerInformacion();
         }
-        
-        System.out.println();
+
+        return detalles;
     }
 }
-
-
-//relacion de asición entre actor y pelicula, porque el actor existe por separado de la peli
