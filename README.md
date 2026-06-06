@@ -47,7 +47,9 @@ JUnit: se agregaron pruebas unitarias para validar funcionalidades principales.
 
 
 
-Estructura del proyecto
+## Estructura del proyecto
+
+```text
 poo_unidad4_tarea1
 ├── src
 │   ├── controlador
@@ -89,6 +91,8 @@ poo_unidad4_tarea1
 │
 ├── README.md
 └── module-info.java
+```
+
 
 
 Descripción de paquetes
