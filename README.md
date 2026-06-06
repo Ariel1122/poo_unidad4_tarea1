@@ -43,6 +43,10 @@ Código limpio: el proyecto se separó en paquetes con responsabilidades claras.
 SOLID: se aplicaron principios para mejorar la organización y mantenimiento del código.
 MVC: se separó el modelo, la vista y el controlador.
 JUnit: se agregaron pruebas unitarias para validar funcionalidades principales.
+
+
+
+
 Estructura del proyecto
 poo_unidad4_tarea1
 ├── src
@@ -85,6 +89,7 @@ poo_unidad4_tarea1
 │
 ├── README.md
 └── module-info.java
+
 
 Descripción de paquetes
 poo
